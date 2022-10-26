@@ -1,0 +1,1524 @@
+:root {
+  --underline-color: green;
+  --divider-color: #F4F9F9;
+  --notification-color: black;
+  --notification-background-color: #99D8FF;
+  --menuButtonBorderColor: #EF5B0C;
+  /*
+  #F5EDDC (beige)
+  #FBF7F0
+  #4D77FF (dark blue / violet)
+  */
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.w100 {
+  font-weight: 100;
+  color: ;
+}
+
+.w200 {
+  font-weight: 200;
+}
+
+.w300 {
+  font-weight: 300;
+}
+
+.w400 {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+/* bodies */
+
+#logo {
+  width: 60%;
+  margin: 20px 0px 15px 0px;
+}
+
+#body-passgen {
+  --transparent: 0.6;
+  --transparent2: 1;
+  background: -moz-linear-gradient(0deg, rgba(34,193,195,var(--transparent)) 0%, rgba(253,187,45,var(--transparent2)) 100%);
+  background: -webkit-linear-gradient(0deg, rgba(34,193,195,var(--transparent)) 0%, rgba(253,187,45,var(--transparent2)) 100%);
+  background: linear-gradient(0deg, rgba(34,193,195,var(--transparent)) 0%, rgba(253,187,45,var(--transparent2)) 100%);
+}
+
+/* glassboxes effect */
+.glass-box {
+  background: rgba( 255, 255, 255, 0.45 );
+  /* box-shadow: 0 2px 8px 0 rgba( 31, 38, 135, 0.37 ); */
+  backdrop-filter: blur( 5.5px );
+  -webkit-backdrop-filter: blur( 5.5px );
+  border-radius: 10px;
+}
+
+.title {
+  font-family: 'Fira Code', monospace;
+  padding-top: 15px;
+  font-size: 3rem;
+}
+
+.subtitle {
+  width: 60%;
+}
+
+.section_divider {
+  width: 60%;
+  height: 1px;
+  border: 1px solid var(--divider-color);
+  border-radius: 7px 7px 7px 7px;
+  background-color: var(--divider-color);
+}
+
+.container-header {
+  /* padding-bottom: 10px; */
+}
+
+.section-container {
+  width: 60%;
+}
+.section-container p.section-content {
+  text-align: left;
+}
+
+.section-header {
+  text-align: left;
+}
+
+.section-row {
+  display: flex;
+  width: 100%;
+  margin: 10px 0px 10px 0px;
+}
+.section-row > .left {
+  flex: 1 1 0;
+  text-align: right;
+}
+.section-row > .right {
+  flex: 1 1 0;
+  text-align: left;
+}
+
+.icon-container {
+  text-align: center;
+  padding-top: 15px;
+}
+.icon-container > span {
+  background: none;
+  font-size: 6rem;
+}
+.icon-container > span > span {
+  font-size: 6rem;
+}
+
+.flex-item {
+    display:inline-flex;
+}
+
+.pad {
+  padding-top: 20px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  margin: 0px;
+}
+
+.padVert {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.aLeft {
+  text-align: left;
+}
+.aRight {
+  text-align: right;
+}
+
+.footer {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  color: grey;
+  margin-bottom: 10px;
+}
+.white {
+  color: white;
+}
+
+.footer-left {
+  width: 50%;
+  text-align: left;
+}
+
+.footer-right {
+  width: 50%;
+  text-align: right;  
+}
+
+.spacer {
+  width: 60%;
+  height: 10px;
+}
+
+div.styledBorder {
+  border: 6px solid lightgrey;
+  border-radius: 5px;
+}
+
+.card-container {
+  width: 60%;
+}
+
+.card-size-var {
+  width: 10rem;
+}
+
+.padCard {
+  padding-top: 20px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  margin: 0px;
+}
+
+.custom-styled {
+  color: var(--notification-color);
+  background-color: var(--notification-background-color);
+}
+
+#projects-card-holder {
+  width: 80%;
+}
+
+.hover-underline-animation {
+  /* display: inline-block; */
+  position: relative;
+  color: var(--underline-color);
+  text-decoration: none!important;
+}
+.hover-underline-animation:hover {
+  color: var(--underline-color);
+} 
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--underline-color);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.borderless span {
+  border: none;
+}
+
+/* navigation */
+
+/* The component will reset button browser styles */
+
+.r-button{
+  --uirButtonBackgroundColor: var(--rButtonBackgroundColor, transparent);
+  --uirButtonPadding: var(--rButtonPadding, var(--rButtonPaddingTop, 0) var(--rButtonPaddingRight, 0) var(--rButtonPaddingBottom, 0) var(--rButtonPaddingLeft, 0));
+  --uirButtonBorderWidth: var(--rButtonBorderWidth, 0);
+  --uirButtonBorderStyle: var(--rButtonBorderStyle, solid);
+  --uirButtonBorderColor: var(--rButtonBorderColor, currentColor);
+  --uirButtonFontFamily: var(--rButtonFontFamily, inherit);
+  --uirButtonFontSize: var(--rButtonFontSize,  inherit);
+  --uirButtonColor: var(--rButtonColor);
+
+  background-color: var(--uirButtonBackgroundColor);
+  padding: var(--uirButtonPadding);
+
+  border-width: var(--uirButtonBorderWidth);
+  border-style: var(--uirButtonBorderStyle);
+  border-color: var(--uirButtonBorderColor);
+
+  cursor: pointer;
+
+  font-family: var(--uirButtonFontFamily);
+  font-size: var(--uirButtonFontSize);
+}
+
+.r-button::-moz-focus-inner,
+.r-button[type="button"]::-moz-focus-inner,
+.r-button[type="reset"]::-moz-focus-inner,
+.r-button[type="submit"]::-moz-focus-inner {
+  
+  /* Remove the inner border and padding in Firefox. */
+  
+  border-style: none;
+  padding: 0;
+}
+
+/* The component will reset browser's styles of link */
+
+.r-link{
+    --uirLinkDisplay: var(--rLinkDisplay, inline-flex);
+    --uirLinkTextColor: var(--rLinkTextColor);
+    --uirLinkTextDecoration: var(--rLinkTextDecoration, none);
+
+    display: var(--uirLinkDisplay) !important;
+    color: var(--uirLinkTextColor) !important;
+    text-decoration: var(--uirLinkTextDecoration) !important;
+}
+.r-link-search {
+  --uirLinkTextColor: #89CFFD;
+  /* -webkit-text-stroke: 2px lightgrey; */
+}
+
+/* The component will reset browser's styles of list */
+
+.r-list{
+    --uirListPaddingLeft: var(--rListPaddingLeft, 0);
+    --uirListMarginTop: var(--rListMarginTop, 0);
+    --uirListMarginBottom: var(--rListMarginBottom, 0);
+    --uirListListStyle: var(--rListListStyle, none);
+
+    padding-left: var(--uirListPaddingLeft) !important;
+    margin-top: var(--uirListMarginTop) !important;
+    margin-bottom: var(--uirListMarginBottom) !important;
+    list-style: var(--uirListListStyle) !important;
+}
+
+/* Basic styles of the hamburger component */
+
+.m-hamburger{  
+  --uiHamburgerThickness: var(--hamburgerThickness, 4px);
+
+  display: var(--hamburgerDisplay, inline-flex);
+  width: var(--hamburgerWidth, 28px);
+  height: var(--hamburgerHeight, 20px);
+
+  position: relative;
+}
+
+.m-hamburger::before, 
+.m-hamburger::after, 
+.m-hamburger__label{
+  width: 100%;
+  height: var(--uiHamburgerThickness);
+  border-radius: var(--hamburgerBorderRadius, 5px);
+  background-color: black;
+
+  position: absolute;
+  left: 0;
+}
+
+.m-hamburger::before, 
+.m-hamburger::after{
+  content:"";
+}
+
+.m-hamburger::before{
+  top: 0;
+}
+
+.m-hamburger::after{
+  bottom: 0;
+}
+
+.m-hamburger__label{
+  /* The calculation of middle hamburger button line position */
+  
+  top: calc(50% - calc(var(--uiHamburgerThickness) / 2));
+}
+
+/* helper to hide elements that are available only for screen readers. */
+
+.screen-reader{
+  width: var(--screenReaderWidth, 1px) !important;
+  height: var(--screenReaderHeight, 1px) !important;
+  padding: var(--screenReaderPadding, 0) !important;
+  border: var(--screenReaderBorder, none) !important;
+
+  position: var(--screenReaderPosition, absolute) !important;
+  clip: var(--screenReaderClip, rect(1px, 1px, 1px, 1px)) !important;
+  overflow: var(--screenReaderOverflow, hidden) !important;
+}
+
+/*
+=====
+MENU STYLES
+=====
+*/
+
+.menu{
+  --uiMenuCircleSize: var(--menuCircleSize, 6.25rem);
+  --uiMenuCircleOffset: var(--menuCircleOffset, 1rem);
+  --uiMenuCircleHeight: calc(var(--uiMenuCircleSize) / 2);  
+  --uiMenuCircleBackgroundColor: var(--menuCircleBackgroundColor, currentColor);
+
+  --uiMenuHamburgerWidth: var(--menuHamburgerWidth, 1.75rem);
+  --uiMenuHamburgerHeight: var(--menuHamburgerHeight, 1.25rem);
+  
+  --rButtonPaddingTop: calc(var(--uiMenuCircleHeight) - var(--uiMenuHamburgerHeight) - var(--uiMenuCircleOffset));
+  
+  --hamburgerWidth: var(--uiMenuHamburgerWidth);
+  --hamburgerHeight: var(--uiMenuHamburgerHeight);
+  --hamburgerBackgroundColor: var(--menuHamburgerBackgroundColor, #fff);
+
+  width: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: var(--menuZindex, 9998);
+}
+
+.menu__nav{
+  box-sizing: border-box;
+  width: 100%;
+  height: 0;
+
+  transition: opacity .2s ease-out;
+  opacity: 0;
+
+  display: flex;
+  align-items: flex-end;
+  z-index: 2;
+}
+
+.menu__list{
+  width: 100%;
+  max-height: 100%;
+
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.menu__toggle{
+  box-sizing: border-box;
+  width: var(--uiMenuCircleSize);
+  height: var(--uiMenuCircleHeight);
+  flex: none;
+
+  position: relative;
+}
+
+.menu__toggle::before{
+  /*
+  1. The font-size property is used to simplify calculations of the element's sizes and position
+  2. The negative value for the bottom property need for hiding half of circle. 
+  */
+
+  content: "";
+  width: 1em;
+  height: 1em;
+  font-size: var(--uiMenuCircleSize); /* 1 */
+
+  /* background-color: var(--uiMenuCircleBackgroundColor); */
+  /* glassmorphism effect */
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+
+  border-radius: 50%;
+
+  /* set border of button */
+  border: 5px solid var(--menuButtonBorderColor); 
+
+  position: absolute;
+  bottom: -.5em; /* 2 */
+  left: calc(50% - .5em);
+  z-index: -1;
+
+  will-change: width, height;
+  transition: transform .25s cubic-bezier(0.04, -0.1, 0.29, 0.98),
+              width .25s cubic-bezier(0.04, -0.1, 0.29, 0.98),
+              height .25s cubic-bezier(0.04, -0.1, 0.29, 0.98);
+}
+
+/* styles of hamburger's animation */
+
+.m-hamburger::before, 
+.m-hamburger::after, 
+.m-hamburger__label{
+  transition-timing-function: ease;
+  transition-duration: .15s;  
+}
+
+.m-hamburger::before, 
+.m-hamburger::after{
+  transition-property: transform;
+}
+
+.m-hamburger__label{
+  transition-property: transform, opacity;
+}
+
+/*
+=====
+MENU STATES
+=====
+*/
+
+.menu__toggle:focus{
+  outline: var(--menuHaburgerOutlineOWidth, 2px) solid none; /* var(--menuHaburgerOutlineColor); */
+  outline-offset: var(--menuHaburgerOutlineOffset, 5px);
+}
+
+.menu_activated{
+  height: 100%;
+}
+
+.menu_activated .menu__nav{
+  flex-grow: 1;
+  opacity: 1;
+
+  will-change: opacity;
+  transition-duration: .2s;
+  transition-delay: .3s;
+}
+
+.menu_activated .menu__toggle::before{
+  width: 100vmax;
+  height: 100vmax;
+  transform: translate3d(-50vh, -50vh, 0) scale(5);
+  transition-duration: 1s;
+}
+
+.menu:not(.menu_activated) .menu__list{
+  display: none;
+}
+
+.menu_activated .m-hamburger::before{
+  top: 50%;
+  transform: translate3d(0, -50%, 0) rotate(45deg);
+}
+
+.menu_activated .m-hamburger::after{
+  transform: translate3d(0, -50%, 0) rotate(135deg);
+  top: 50%;
+}
+
+.menu_activated .m-hamburger__label{
+  transform: rotate(-45deg) translate3d(-.285em,-.3em, 0);
+  opacity: 0;
+}
+
+/*
+=====
+SETTINGS
+=====
+*/
+
+:root{
+  --colorWhite: #fff;
+  --colorMain: #79B4B7; /* #4557bb */
+  --menuCircleBackgroundColor: var(--colorMain);
+  --menuCircleBorderColor: var(--menuButtonBorderColor);
+  --menuHamburgerBackgroundColor: var(--colorWhite);
+  --menuHaburgerOutlineColor: var(--colorMain);
+}
+
+.menu_activated{
+  --menuHaburgerOutlineColor: var(--colorWhite);
+}
+
+.menu__group{
+  --rLinkTextColor: black;
+
+  padding: .5rem 2rem; 
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* 404 button css 
+from: https://getcssscan.com/css-buttons-examples */
+
+.button-19 {
+  appearance: button;
+  background-color: #1899D6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 20px 0px 10px 0px;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 14rem;
+}
+
+.button-19:after {
+  background-clip: padding-box;
+  background-color: #1CB0F6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-19:main,
+.button-19:focus {
+  user-select: auto;
+}
+
+.button-19:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.button-19:disabled {
+  cursor: auto;
+}
+
+/*
+-------------------------
+PASSGEN SPECIFIC SETTINGS
+-------------------------
+*/
+
+/* password gen button */
+
+.button-20 {
+  appearance: button;
+  background-color: #224B0C;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 10px 0px 25px 0px;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 10rem;
+}
+
+.button-20:after {
+  background-clip: padding-box;
+  background-color: #42855B;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-20:main,
+.button-20:focus {
+  user-select: auto;
+}
+
+.button-20:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.button-20:disabled {
+  cursor: auto;
+}
+
+/* password settings randomize button */
+
+.btn-rand {
+  appearance: button;
+  background-color: #AAAAAA;
+  border: solid transparent;
+  border-radius: 14px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 10px 0px 5px 0px;
+  outline: none;
+  overflow: visible;
+  padding: 5px 5px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 10rem;
+}
+
+.btn-rand:after {
+  background-clip: padding-box;
+  background-color: #BBBBBB;
+  border: solid transparent;
+  border-radius: 14px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.btn-rand:main,
+.btn-rand:focus {
+  user-select: auto;
+}
+
+.btn-rand:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.btn-rand:disabled {
+  cursor: auto;
+}
+
+/* password settings reset button */
+
+.button-reset {
+  appearance: button;
+  background-color: dimgrey;
+  border: solid transparent;
+  border-radius: 14px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 15px 0px 5px 0px;
+  outline: none;
+  overflow: visible;
+  padding: 5px 5px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 6rem;
+}
+
+.button-reset:after {
+  background-clip: padding-box;
+  background-color: grey;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-reset:main,
+.button-reset:focus {
+  user-select: auto;
+}
+
+.button-reset:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.button-reset:disabled {
+  cursor: auto;
+}
+
+/* button copy */
+
+.button-copy {
+  appearance: button;
+  background-color: #EFD345;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 10px 0px 25px 0px;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 6rem;
+}
+
+.button-copy:after {
+  background-clip: padding-box;
+  background-color: #FFEF82;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-copy:main,
+.button-copy:focus {
+  user-select: auto;
+}
+
+.button-copy:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.button-copy:disabled {
+  cursor: auto;
+}
+
+/* button github */
+
+.button-21 {
+  appearance: button;
+  background-color: black;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 10px 0px 25px 0px;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  /* text-transform: uppercase; */
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 10rem;
+}
+
+.button-21:after {
+  background-clip: padding-box;
+  background-color: white;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-21:main,
+.button-21:focus {
+  user-select: auto;
+}
+
+.button-21:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.button-21:disabled {
+  cursor: auto;
+}
+
+/* align button logo with text */
+
+.align-btn-cont {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* checkboxes passgen slider 
+taken from: https://codepen.io/AllThingsSmitty/pen/MmxxOz/ */
+
+.switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .1s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+input:disabled + .slider {
+  background-color: #DA7F8F;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* passgen range slider */
+
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+  padding: 0rem 1rem 0rem 1rem;
+}
+
+/* slider value output */
+.sliderValue {
+  font-size: 3rem;
+}
+
+/* The slider itself */
+.range-slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  max-width: 30rem;
+  height: 15px; /* Specified height */
+  border-radius: 10px;
+  background: none; /* no background */
+  outline: none; /* Remove outline */
+  border: 2px solid lightgrey; /* border */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.range-slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  border-radius: 50%;
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.range-slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  border-radius: 50%;
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+/* output field */
+#outField {
+  width: 100%;
+  border: 2px solid #D1D1D1;
+  background-color: #EFEFEF;
+  border-radius: 5px;
+  padding: 2px 5px 2px 5px;
+}
+#outField:focus {
+  outline: none;
+}
+
+/* popper */
+
+#tooltip {
+  background: #F4A442;
+  color: black;
+  font-weight: bold;
+  padding: 4px 8px;
+  margin-right: 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  width: fit-content;
+  display: none; /* make invisible before btnCopy is clicked */
+}
+
+#tooltip[data-show] {
+  display: block;
+}
+
+#arrow,
+#arrow::before {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: inherit;
+}
+
+#arrow {
+  visibility: hidden;
+}
+
+#arrow::before {
+  visibility: visible;
+  content: '';
+  transform: rotate(45deg);
+}
+
+#tooltip[data-popper-placement^='top'] > #arrow {
+  bottom: -4px;
+}
+
+#tooltip[data-popper-placement^='bottom'] > #arrow {
+  top: -4px;
+}
+
+#tooltip[data-popper-placement^='left'] > #arrow {
+  right: -4px;
+}
+
+#tooltip[data-popper-placement^='right'] > #arrow {
+  left: -4px;
+}
+
+/* 
+------
+SEARCH
+------
+*/
+
+#input-search {
+  border: 2px solid #7FB77E;
+  border-radius: 5px;
+  width: 60%;
+}
+#input-search:focus {
+  outline: none;
+}
+
+.btn-search {
+  appearance: button;
+  background-color: #F675A8;
+  border: solid transparent;
+  border-radius: 10px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 20px 0px 10px 0px;
+  outline: none;
+  overflow: visible;
+  padding: 5px 5px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 8rem;
+}
+.btn-search:after {
+  background-clip: padding-box;
+  background-color: #554994;
+  border: solid transparent;
+  border-radius: 10px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+.btn-search:main,
+.btn-search:focus {
+  user-select: auto;
+}
+.btn-search:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+.btn-search:disabled {
+  cursor: auto;
+}
+
+.btn-search-reset {
+  appearance: button;
+  background-color: dimgrey;
+  border: solid transparent;
+  border-radius: 10px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 20px 0px 10px 0px;
+  outline: none;
+  overflow: visible;
+  padding: 5px 5px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 5rem;
+}
+.btn-search-reset:after {
+  background-clip: padding-box;
+  background-color: grey;
+  border: solid transparent;
+  border-radius: 10px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+.btn-search-reset:main,
+.btn-search-reset:focus {
+  user-select: auto;
+}
+.btn-search-reset:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+.btn-search-reset:disabled {
+  cursor: auto;
+}
+
+/* search results items output */
+.search-results {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+
+/* 
+
+mobile layout settigs 
+
+*/
+
+@media (max-width: 914px) {
+  /* TABLETS */
+  /* scale index cards to fit in one row */
+  .card-size-var {
+    flex: 1 1 0;
+    width: 10rem;
+  }
+
+  .card-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  /* PORTRAIT PHONES */
+
+  #logo {
+    width: 90%;
+  }
+
+  /* scale index cards to fit in one row */
+  .card-size-var {
+    flex: 1 1 0;
+    width: 7.5rem;
+  }
+
+  .padCard {
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+  }
+
+  .section_divider {
+    width: 90%;
+  }
+
+  .section-container {
+    width: 90%;
+  }
+
+  .footer {
+    /* reduce footer font size */
+    width: 90%;
+    font-size: 0.7rem;
+  }
+
+  div.styledBorder {
+    border: 5px solid lightgrey;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    width: 90%;
+  }
+
+  .icon-container > span {
+    font-size: 4rem;
+  }
+  .icon-container > span > span {
+    font-size: 4rem;
+  }
+
+  .section-row > .left {
+    flex: 2 1 0;
+  }
+
+  #mail {
+    font-size: 1.5rem;
+  }
+
+  #timestamp_index {
+    margin-top: 1rem;
+  }
+
+  /* search */
+  #input-search {
+    width: 100%;
+  }
+}
+
+@media (max-width: 361px) {
+  /* TIGHT PORTRAIT PHONES */
+
+  .card-size-var {
+    flex: 1 1 0;
+    width: 7.3rem;
+  }
+}
+
+
+/*
+
+COLLAPSIBLE
+
+*/
+
+input[type='checkbox'] {
+ display: none; 
+} 
+
+.wrap-collabsible { 
+  margin: 1.2rem 0; 
+} 
+
+.lbl-toggle { 
+  display: block; 
+  font-weight: bold; 
+  font-family: monospace; 
+  font-size: 1.2rem; 
+  text-transform: uppercase; 
+  text-align: center; 
+  padding: 1rem; 
+  color: #FFF; 
+  background: #1363DF; 
+  cursor: pointer; 
+  border-radius: 7px; 
+  transition: all 0.25s ease-out; 
+} 
+
+.lbl-toggle:hover { 
+  /* color: #DDD; */
+} 
+
+.lbl-toggle::before { 
+  content: ' '; 
+  display: inline-block; 
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent; 
+  border-left: 5px solid currentColor; 
+  vertical-align: middle; 
+  margin-right: .7rem; 
+  transform: translateY(-2px); 
+  transition: transform .2s ease-out; 
+} 
+
+.toggle:checked + .lbl-toggle::before { 
+  transform: rotate(90deg) translateX(-3px); 
+} 
+
+.collapsible-content { 
+  max-height: 0px; 
+  overflow: hidden; 
+  transition: max-height .25s ease-in-out; 
+} 
+
+.toggle:checked + .lbl-toggle + .collapsible-content { 
+  max-height: 350px; 
+} 
+
+.toggle:checked + .lbl-toggle { 
+  border-bottom-right-radius: 0; 
+  border-bottom-left-radius: 0; 
+} 
+
+.collapsible-content .content-inner { 
+  background: rgba(0, 105, 255, .1); 
+  border-bottom: 1px solid rgba(0, 105, 255, .45); 
+  border-bottom-left-radius: 7px; 
+  border-bottom-right-radius: 7px; 
+  padding: .5rem 1rem; 
+} 
+
+.collapsible-content p { 
+  margin-bottom: 0; 
+}
+
+/* passgen tabs */
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid white;
+  border-radius: 10px 10px 0px 0px;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  width: 50%;
+  display: inline-block;
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #E1E5EA;
+}
+
+/* Change background color of buttons on hover */
+.tab button:focus {
+  outline: none;
+  border: none;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ddd;  /* #ccc */
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid white;
+  border-radius: 0px 0px 10px 10px;
+  border-top: none;
+  animation: fadeEffect .5s; /* Fading effect takes 1 second */
+  /* glassmorphism effect */
+  background: rgba( 255, 255, 255, 0.45 );
+  backdrop-filter: blur( 5.5px );
+  -webkit-backdrop-filter: blur( 5.5px );
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+/* btn go to openpassword */
+
+.btn-passgen {
+  appearance: button;
+  background-color: rgb(253,187,45);
+  border: solid transparent;
+  border-radius: 10px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 20px 0px 10px 0px;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 16rem;
+}
+.btn-passgen:after {
+  background-clip: padding-box;
+  background-color: rgb(34,193,195);
+  border: solid transparent;
+  border-radius: 10px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+.btn-passgen:main,
+.btn-passgen:focus {
+  user-select: auto;
+}
+.btn-passgen:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+.btn-passgen:disabled {
+  cursor: auto;
+}

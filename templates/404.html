@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Monserrat font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,700" rel="stylesheet">
+    <!-- favicons 
+      generated using: https://realfavicongenerator.net/ -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='/favicons/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='/favicons/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='/favicons/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='/favicons/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ url_for('static', filename='/favicons/safari-pinned-tab.svg') }}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- CSS -->
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- JS custom script -->
+    <script type="text/javascript">
+      var siteVersion = {{ site_version | tojson }};
+    </script>
+    <script src="{{ url_for('static', filename='js/site.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/nav.js') }}" defer></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" 
+    crossorigin="anonymous"></script>
+    <!-- font awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <title>PBR - 404</title>
+  </head>
+  <body>
+    <center>
+
+      <h1 class="title-bold" style="font-size: 100px;">404</h1>
+
+      <hr class='section_divider'>
+
+      <div class="section-container padVert">
+        <h2><span class="badge badge-warning">Page not found</span></h2>
+        <button id="btn-404Home" class="button-19" role="button">Go back home</button>
+      </div>
+
+      <hr class='section_divider'>
+
+      <div id="footer" class="footer">
+        <!-- content added with JS -->
+      </div>
+      <div class="spacer"></div>
+
+      <!-- navigation menu added with JS -->
+
+    </center>
+
+    <script type="text/javascript">
+      console.log("executed");
+      const btnHome = document.getElementById("btn-404Home");
+      console.log(btnHome);
+      btnHome.addEventListener("click", function() {
+        console.log("click"); // never gets executed, why?
+        document.location.href = "{{ url_for('index') }}";
+      });
+    </script>
+
+  </body>
+</html>
