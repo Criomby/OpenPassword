@@ -1,0 +1,5 @@
+# materials folder (additional materials like artworks / images in its original form)
+materials
+
+# python virtual environment
+venv
