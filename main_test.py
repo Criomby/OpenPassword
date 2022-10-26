@@ -14,7 +14,7 @@ site_version = "*test site*"
 app = Flask(__name__)
 
 
-# make the page refresh after each load
+# make the page refresh after each load (nothing is cached)
 @app.after_request
 def after_request(response):
     """Ensure responses aren't cached"""
