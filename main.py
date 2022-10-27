@@ -2,7 +2,7 @@ from flask import Flask, url_for, render_template, request, redirect
 from datetime import date
 
 
-site_version = "v1.1.2:102022"
+site_version = "v1.0.1:102022"
 
 
 app = Flask(__name__)
