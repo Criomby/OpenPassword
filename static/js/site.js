@@ -16,7 +16,7 @@ footer.innerHTML = `
 const btnContact = document.getElementById("btn-contact");
 if (btnContact != null) {
   btnContact.onclick = function() {
-    location.href = "https://philippebraum.com/contact";
+    window.open("https://philippebraum.com/contact");
   }
 }
 
@@ -24,6 +24,6 @@ if (btnContact != null) {
 const btnGithub = document.getElementById("btn-github");
 if (btnGithub != null) {
   btnGithub.onclick = function() {
-    location.href = "https://github.com/Criomby/openPassword";
+    window.open("https://github.com/Criomby/openPassword");
   }
 }

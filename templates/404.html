@@ -34,7 +34,7 @@
     <!-- font awesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <title>PBR - 404</title>
+    <title>OpenPwd - 404</title>
   </head>
   <body>
     <center>
@@ -65,7 +65,7 @@
       console.log(btnHome);
       btnHome.addEventListener("click", function() {
         console.log("click"); // never gets executed, why?
-        document.location.href = "{{ url_for('index') }}";
+        location.href = "{{ url_for('index') }}";
       });
     </script>
 
