@@ -78,10 +78,6 @@
   background-color: var(--divider-color);
 }
 
-.container-header {
-  /* padding-bottom: 10px; */
-}
-
 .section-container {
   width: 60%;
 }
@@ -564,7 +560,7 @@ from: https://getcssscan.com/css-buttons-examples */
   font-weight: 700;
   letter-spacing: .8px;
   line-height: 20px;
-  margin: 20px 0px 10px 0px;
+  margin: 10px 0px 10px 0px;
   outline: none;
   overflow: visible;
   padding: 13px 16px;

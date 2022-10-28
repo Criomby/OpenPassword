@@ -39,13 +39,16 @@
   <body>
     <center>
 
-      <h1 class="title-bold" style="font-size: 100px;">404</h1>
+      <div>
+        <img style="width: 286px; margin-top: 20px;" src="{{ url_for('static', filename='images/openpwd_logo_med.webp') }}">
+        <br>
+        <span class="badge badge-warning" style="font-size: 2rem; margin-top: 10px;">Page not found</span>
+      </div>
 
       <hr class='section_divider'>
 
-      <div class="section-container padVert">
-        <h2><span class="badge badge-warning">Page not found</span></h2>
-        <button id="btn-404Home" class="button-19" role="button">Go back home</button>
+      <div class="section-container">
+        <button id="btn-404Home" class="button-19" role="button" type="button">Go back home</button>
       </div>
 
       <hr class='section_divider'>
