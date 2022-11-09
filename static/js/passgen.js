@@ -10,7 +10,7 @@ js script to generate passwords
 const tabs = document.getElementsByClassName("tablinks");
 const btnTraditional = tabs[0];
 const btnMnemonic = tabs[1];
-// TODO add hex tab #13
+const btnHex = tabs[2];
 
 /* -----------------
    traditional
