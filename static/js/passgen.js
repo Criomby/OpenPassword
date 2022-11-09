@@ -10,7 +10,7 @@ js script to generate passwords
 const tabs = document.getElementsByClassName("tablinks");
 const btnTraditional = tabs[0];
 const btnMnemonic = tabs[1];
-const btnHex = tabs[2];
+const btnHexadecimal = tabs[2];
 
 /* -----------------
    traditional
@@ -288,7 +288,7 @@ class PassGen {
 		else if (btnMnemonic.classList.contains("active")) {
 			this.passType = 2;
 		}
-		else if (btnHex.classList.contains("active")) {
+		else if (btnHexadecimal.classList.contains("active")) {
 			this.passType = 3;
 		}
 		else {
