@@ -1,7 +1,7 @@
 // add footer content into the footer element
 const footer = document.getElementById('footer');
 footer.innerHTML = `
-<div class="footer-left">No trackers or ads<br>
+<div class="footer-left">No cookies, trackers or ads<br>
   Right to freedom<br>
 </div>
 <div class="footer-right">
