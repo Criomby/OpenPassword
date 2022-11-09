@@ -124,8 +124,8 @@ sliderLenHex.oninput = function() {
   sliderValueLenHex.innerHTML = this.value;
 }
 
-const chkLenType = document.getElementById("chkLenType");
-const chkIdent = document.getElementById("chkIdent");
+const chkHexLenType = document.getElementById("chkLenType");
+const chkHexIdent = document.getElementById("chkIdent");
 chkIdent.click(); // activated by default (0x...)
 
 // general buttons
@@ -143,7 +143,7 @@ const outField = document.getElementById("outField");
 
 // password generator class
 class PassGen {
-	// TODO #12
+	// TODO #12: Refactor class
 	constructor() {
 		this.passType = 0;  // one of [1, 2, 3] (type 1: alphanumeric password, type 2: mnemonic passphrase, type 3: hexadecimal string)
 
@@ -168,9 +168,9 @@ class PassGen {
 
 		// hex
 		this.hexChars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
-		this.hexLen = 0; // length of hex string in ["chars", "bytes"]
-		this.lengthType = "chars"; // one of ["chars", "bytes"], defaults to "chars"
-		this.prefix = 0; // 0 (false): no prefix, 1 (true): "0x" prefix
+		this.hexLen; // length of hex string in ["chars", "bytes"]
+		this.hexLenType; // one of ["chars", "bytes"], defaults to "chars"
+		this.hexIdent; // 0 (false): no prefix, 1 (true): "0x" prefix, defaults to 1
 	}
 
 	/*
@@ -274,8 +274,9 @@ class PassGen {
 		return password
 	}
 
-	getHex() {
+	genHex() {
 		// TODO implement hex gen method #15
+		return "hex test";
 	}
 
 	// get checkbox values
@@ -286,6 +287,9 @@ class PassGen {
 		}
 		else if (btnMnemonic.classList.contains("active")) {
 			this.passType = 2;
+		}
+		else if (btnHex.classList.contains("active")) {
+			this.passType = 3;
 		}
 		else {
 			this.passType = 0;
@@ -305,6 +309,9 @@ class PassGen {
 		this.whitespace = chkWhite.checked;
 
 		// get length and options for hex
+		this.hexLen = sliderLenHex.value;
+		this.hexLenType = chkHexLenType.checked;
+		this.hexIdent = chkHexIdent.checked;
 		// TODO #16
 	}
 
