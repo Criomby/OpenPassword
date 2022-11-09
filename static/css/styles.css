@@ -98,6 +98,10 @@
   flex: 1 1 0;
   text-align: right;
 }
+.section-row > .mid {
+  flex: 1 1 0;
+  text-align: center;
+}
 .section-row > .right {
   flex: 1 1 0;
   text-align: left;

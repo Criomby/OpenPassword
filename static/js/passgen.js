@@ -109,10 +109,26 @@ sliderWords.oninput = function() {
   sliderValueWords.innerHTML = this.value;
 }
 
-// mnemonic
 const chkWhite = document.getElementById("chkWhite");
 chkWhite.click(); // activated by default
 
+/* -----------------
+   hex
+   ----------------- */
+// length range slider
+const sliderLenHex = document.getElementById("sliderLenHex");
+const sliderValueLenHex = document.getElementById("sliderValueLenHex");
+sliderValueLenHex.innerHTML = sliderLenHex.value; // Display the default slider value
+// Update the current slider value (each time you drag the slider handle)
+sliderLenHex.oninput = function() {
+  sliderValueLenHex.innerHTML = this.value;
+}
+
+const chkLenType = document.getElementById("chkLenType");
+const chkIdent = document.getElementById("chkIdent");
+chkIdent.click(); // activated by default (0x...)
+
+// general buttons
 // button reset
 const btnReset = document.getElementById("btnReset");
 btnReset.addEventListener("click", reset);
@@ -124,11 +140,6 @@ const btnCopy = document.getElementById("btn-copy");
 btnCopy.addEventListener("click", copyPwdToClipboard);
 // output
 const outField = document.getElementById("outField");
-
-/* -----------------
-   hex
-   ----------------- */
-// TODO create frontend tab content #14
 
 // password generator class
 class PassGen {
