@@ -10,7 +10,11 @@ js script to generate passwords
 const tabs = document.getElementsByClassName("tablinks");
 const btnTraditional = tabs[0];
 const btnMnemonic = tabs[1];
+// TODO add hex tab #13
 
+/* -----------------
+   traditional
+   ----------------- */
 // length range slider
 const sliderLength = document.getElementById("sliderLength");
 const sliderValueLength = document.getElementById("sliderValueLength");
@@ -19,38 +23,12 @@ sliderValueLength.innerHTML = sliderLength.value; // Display the default slider 
 sliderLength.oninput = function() {
   sliderValueLength.innerHTML = this.value;
 }
-
-// words range slider 
-const sliderWords = document.getElementById("sliderWords");
-const sliderValueWords = document.getElementById("sliderValueWords");
-sliderValueWords.innerHTML = sliderWords.value; // Display the default slider value
-// Update the current slider value (each time you drag the slider handle)
-sliderWords.oninput = function() {
-  sliderValueWords.innerHTML = this.value;
-}
-
-// checkboxes
+// checkboxes traditional
 const chkAll = document.getElementById("chkAll");
 const chkLower = document.getElementById("chkLower");
 const chkUpper = document.getElementById("chkUpper");
 const chkDigits = document.getElementById("chkDigits");
 const chkPunct = document.getElementById("chkPunct");
-// mnemonic
-const chkWhite = document.getElementById("chkWhite");
-chkWhite.click(); // activated by default
-
-// button reset
-const btnReset = document.getElementById("btnReset");
-btnReset.addEventListener("click", reset);
-// button generate
-const btnGen = document.getElementById("btn-passgen");
-btnGen.addEventListener("click", generatePassword);
-// button copy
-const btnCopy = document.getElementById("btn-copy");
-btnCopy.addEventListener("click", copyPwdToClipboard);
-
-// output
-const outField = document.getElementById("outField");
 
 // checkboxes disabled
 chkAll.addEventListener("change", function() {
@@ -119,10 +97,42 @@ function enableCheckboxes() {
 	}
 }
 
+/* -----------------
+   mnemonic
+   ----------------- */
+// words range slider 
+const sliderWords = document.getElementById("sliderWords");
+const sliderValueWords = document.getElementById("sliderValueWords");
+sliderValueWords.innerHTML = sliderWords.value; // Display the default slider value
+// Update the current slider value (each time you drag the slider handle)
+sliderWords.oninput = function() {
+  sliderValueWords.innerHTML = this.value;
+}
+
+// mnemonic
+const chkWhite = document.getElementById("chkWhite");
+chkWhite.click(); // activated by default
+
+// button reset
+const btnReset = document.getElementById("btnReset");
+btnReset.addEventListener("click", reset);
+// button generate
+const btnGen = document.getElementById("btn-passgen");
+btnGen.addEventListener("click", generatePassword);
+// button copy
+const btnCopy = document.getElementById("btn-copy");
+btnCopy.addEventListener("click", copyPwdToClipboard);
+// output
+const outField = document.getElementById("outField");
+
+/* -----------------
+   hex
+   ----------------- */
+// TODO create frontend tab content #14
 
 // password generator class
 class PassGen {
-	// TODO 
+	// TODO #12
 	constructor() {
 		this.passType = 0;  // one of [1, 2, 3] (type 1: alphanumeric password, type 2: mnemonic passphrase, type 3: hexadecimal string)
 
@@ -148,7 +158,8 @@ class PassGen {
 		// hex
 		this.hexChars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
 		this.hexLen = 0; // length of hex string in ["chars", "bytes"]
-		this.lengthType = "chars" // one of ["chars", "bytes"], defaults to "chars"
+		this.lengthType = "chars"; // one of ["chars", "bytes"], defaults to "chars"
+		this.prefix = 0; // 0 (false): no prefix, 1 (true): "0x" prefix
 	}
 
 	/*
@@ -253,7 +264,7 @@ class PassGen {
 	}
 
 	getHex() {
-		// TODO
+		// TODO implement hex gen method #15
 	}
 
 	// get checkbox values
@@ -283,7 +294,7 @@ class PassGen {
 		this.whitespace = chkWhite.checked;
 
 		// get length and options for hex
-		// TODO
+		// TODO #16
 	}
 
 }
@@ -379,6 +390,9 @@ function reset() {
 		chkWhite.click();
 	}
 
+	// hex
+	// TODO #17
+
 	// reset output field
 	outField.value = "";
 }
@@ -406,6 +420,7 @@ function copyPwdToClipboard() {
 
 // site tabs js
 
+// TODO rename function #18
 function openCity(evt, name) {
   // Declare all variables
   var i, tabcontent, tablinks;
