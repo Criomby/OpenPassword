@@ -429,7 +429,17 @@ function reset() {
 	}
 
 	// hex
-	// TODO #17
+	// default length of 16 chars
+	sliderLenHex.value = 16;
+	sliderValueLenHex.innerHTML = sliderLenHex.value;
+	// defaults to length given in chars (unchecked)
+	if (chkHexLenType.checked == true) {
+		chkHexLenType.click();
+	}
+	// defaults to prefix (checked)
+	if (chkHexIdent.checked == false) {
+		chkHexIdent.click();
+	}
 
 	// reset output field
 	outField.value = "";
