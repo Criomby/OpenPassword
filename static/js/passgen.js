@@ -333,7 +333,6 @@ class PassGen {
 			this.hexLenType = "chars";
 		}
 		this.hexIdent = chkHexIdent.checked;
-		// TODO #16
 	}
 
 }
