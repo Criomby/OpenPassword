@@ -167,10 +167,10 @@ class PassGen {
 		this.whitespace = true;
 
 		// hex
-		this.hexChars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
+		this.hexChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
 		this.hexLen; // length of hex string in ["chars", "bytes"]
 		this.hexLenType; // one of ["chars", "bytes"], defaults to "chars"
-		this.hexIdent; // 0 (false): no prefix, 1 (true): "0x" prefix, defaults to 1
+		this.hexIdent; // false: no prefix, true: "0x" prefix, defaults to 1
 	}
 
 	/*
@@ -252,6 +252,7 @@ class PassGen {
 	}
 
 	genMnemonic() {
+		// TODO refactor method #20
 		let sequence = _.shuffle(this.BIP39);
 
 		let passArr = []; // password as array of words
@@ -275,8 +276,23 @@ class PassGen {
 	}
 
 	genHex() {
-		// TODO implement hex gen method #15
-		return "hex test";
+		let hexstring = "";
+
+		let stringSize = this.hexLen;
+		if (this.hexLenType == "bytes") {
+			// one hex symbol (0-9, a-f) is 4 bits so two chars are one byte (8 bits), has to be twice the amount of chars therfore if length is given in bytes
+			stringSize *= 2;
+		}
+
+		for (let i = 0; i < stringSize; i++) {
+			hexstring += _.sample(this.hexChars);
+		}
+
+		if (this.hexIdent == true) {
+			hexstring = "0x" + hexstring;
+		}
+
+		return hexstring;
 	}
 
 	// get checkbox values
@@ -310,7 +326,12 @@ class PassGen {
 
 		// get length and options for hex
 		this.hexLen = sliderLenHex.value;
-		this.hexLenType = chkHexLenType.checked;
+		if (chkHexLenType.checked == true) {
+			this.hexLenType = "bytes";
+		}
+		else if (chkHexLenType.checked == false) {
+			this.hexLenType = "chars";
+		}
 		this.hexIdent = chkHexIdent.checked;
 		// TODO #16
 	}
