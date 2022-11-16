@@ -799,6 +799,13 @@ mobile layout settigs
   }
 }
 
+@media (max-width: 772px) {
+  /* remove tab-names if screen smaller than this */
+  .tab-name {
+    display: none;
+  }
+}
+
 @media (max-width: 576px) {
   /* PORTRAIT PHONES */
 

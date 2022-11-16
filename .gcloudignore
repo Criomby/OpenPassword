@@ -29,3 +29,9 @@ __pycache__/
 
 # store other materials
 /materials
+
+# ts files not needed in gcloud container
+/static/scripts/*.ts
+/static/scripts/*.json
+# also exclude js.map files in production
+/static/scripts/*.js.map
