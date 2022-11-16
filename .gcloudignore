@@ -29,3 +29,7 @@ __pycache__/
 
 # store other materials
 /materials
+
+# ts files not needed in gcloud container
+/static/scripts/*.ts
+/static/scripts/*.json

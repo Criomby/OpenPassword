@@ -3,3 +3,6 @@ materials
 
 # python virtual environment
 venv
+
+# transpiled js files not needed in git
+static/scripts/*.js
