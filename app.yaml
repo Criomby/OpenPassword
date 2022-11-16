@@ -33,8 +33,8 @@ handlers:
 - url: /css
   static_dir: static/css
 
-- url: /js
-  static_dir: static/js
+- url: /scripts
+  static_dir: static/scripts
 
   # This handler routes all requests not caught above to your main app. It is
   # required when static routes are defined, but can be omitted (along with
