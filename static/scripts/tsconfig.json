@@ -5,13 +5,14 @@
         "removeComments": true,
         "preserveConstEnums": true,
         "sourceMap": true,
-        "allowJs": true,
+        // "allowJs": true,
         "lib": [
             "DOM",
             "ES7"
         ]
     },
     "files": [
-        "passgen.ts"
+        "passgen.ts",
+        "site.ts"
     ]
 }
