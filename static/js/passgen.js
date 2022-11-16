@@ -469,7 +469,7 @@ function copyPwdToClipboard() {
 // site tabs js
 
 // TODO rename function #18
-function openCity(evt, name) {
+function openTab(evt, name) {
   // Declare all variables
   var i, tabcontent, tablinks;
 
