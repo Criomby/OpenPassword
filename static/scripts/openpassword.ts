@@ -1,5 +1,5 @@
 /*
-Passgen.ts
+openpassword.ts
 
 OpenPassword (openpassword.app)
 
