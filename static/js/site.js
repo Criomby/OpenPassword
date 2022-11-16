@@ -16,7 +16,7 @@ footer.innerHTML = `
 const btnContact = document.getElementById("btn-contact");
 if (btnContact != null) {
   btnContact.onclick = function() {
-    window.open("https://philippebraum.com/contact");
+    window.open("https://pbr.plus/contact");
   }
 }
 
